@@ -60,21 +60,23 @@ form.addEventListener("submit", function (e) {
 
 function adicionaLinha() {
   const inputNome = document.querySelector("#nome");
-  const inputTelfone = document.querySelector("#telefone");
+  const inputTelefone = document.querySelector("#telefone");
   const temp = document.querySelectorAll(".temp");
   if (arrNomes.includes(inputNome.value)) {
     alert(`O nome "${inputNome.value}" ja foi inserido`);
+  } else if (arrTelefones.includes(inputTelefone.value)) {
+    alert(`O telefone "${inputTelefone.value}" ja foi inserido`);
   } else {
     arrNomes.push(inputNome.value);
-    arrTelefones.push(inputTelfone.value);
+    arrTelefones.push(inputTelefone.value);
     let linha = "<tr>";
     linha += `<td>${inputNome.value}</td>`;
-    linha += `<td>${inputTelfone.value}</td>`;
+    linha += `<td>${inputTelefone.value}</td>`;
     linha += "</tr>";
     linhas += linha;
   }
   inputNome.value = "";
-  inputTelfone.value = "";
+  inputTelefone.value = "";
   if (!temp[0].classList.contains("remove")) {
     temp[0].classList.add("remove");
     temp[1].classList.add("remove");
